@@ -235,7 +235,7 @@ class GymApp(QWidget):
     def export_to_csv(self):
         path, _ = QFileDialog.getSaveFileName(self, "Save CSV", "", "CSV Files (*.csv)")
         if path:
-            with open(path, 'w', newline='', encoding='utf-8') as file:
+            with open(path, 'w', newline='', encoding='utf-8-sig') as file:
                 writer = csv.writer(file)
                 headers = [self.table.horizontalHeaderItem(i).text() for i in range(self.table.columnCount())]
                 writer.writerow(headers)
